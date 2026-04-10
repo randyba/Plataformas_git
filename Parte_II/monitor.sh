@@ -6,3 +6,8 @@ if [ "$#" -ne 2 ]; then
 fi
 
 echo "hello there"
+
+sleep 30 &
+PID=$!
+
+echo "Proceso $PID termino"
