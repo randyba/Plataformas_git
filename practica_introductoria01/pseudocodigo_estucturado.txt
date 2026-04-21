@@ -1,0 +1,76 @@
+Ejercicio 1.1.A
+a) No sabe cuanta agua usar.
+b) No sabe el tiempo necesario de coccion.
+c) No sabe la cantidad correcta de sal.
+
+Ejercicio 1.1.B
+a) Se presenta un error por fondos insuficientes.
+b) verificacion preventiva.
+
+Ejecicio 1.2
+Paso 1) Caminar hacia la pared donde esta la llave.
+Paso 2) Coger la llave.
+Paso 3) Identificar el llavin.
+Paso 4) Introducir la llave y girar a la derecha.
+Paso 5) Abrir la puerta e identificar la mesa.
+Paso 6) Caminar hacia la mesa e identifica el vaso.
+Paso 7) Tomar el vaso, subirlo y girarlo hacia el.
+Paso 8) Tomar del agua del baso.
+
+Reflexion:
+1) Buscar un vaso lleno.
+2) No contempla el escenario.
+3) Buscar otra.
+4) buscar otra solucion en cuanto falle.
+
+Ejecicio 2.1.A
+Entradas) Nota del estudiante
+Proceso) Hacer la comparativa de la nota del estudiante con 6.0 para dar un resultado de aprobacion o reprobacion
+Salidas) Mostrar la condicion del estudiante basado en el proceso anterior de comparativa.
+
+Ejercicio 2.1.B
+Entrada) Solicitar al usuario el dia en el que se encuentra.
+Proceso) Averiguar el proximo fin de semana basado en el dato brindado por la entrada.
+Salida) Mostrar el mensaje del proximo fin de semana basado en el calculo del proceso antrerior.
+
+Ejercicio 2.1.C
+Situacion) Un usuario necesita recargar combustible.
+Entrada) Tipo de combustible y cantidad. 
+Proceso) Echar el combustible y calculo del valor de la cantidad.
+Salida) Pago total del combustible.
+
+Ejercicio 3.1
+
+Paso 1)
+Entradas) Los dos numeros ingesados por el usuario.
+Proceso) Verificar cual de los dos numeros es mayor o si son iguales.
+Salida) Mostrar un mensaje indicando cual es el numero que es mayor o si ambos son iguales.
+
+Paso 2)
+1) Solicitar y leer las dos entradas.
+2) Comparar el primero con el segundo, si es mayor, mostrar mensaje
+3) Si el primero no es mayor, mostrar que el segundo es el mayor.
+4) Sino, mostrar que ambos son iguales.
+5) Si hay algun error, mostrar en pantalla que no se puede comparar (deben ser numeros).
+
+Paso 3)
+1) A es mayor que B.
+2) Ambos son iguales.
+3) B es mayor que A.
+4) A es mayor que B.
+
+
+Ejercicio 3.2
+Paso 1) Identificar que son 5 muestras.
+Paso 2) Indentificar la formula del promedio (Sumar los valores de las muestras y dividir el resultado entre la cantidad de muestras)
+Paso 3) Sumar los valores de las muestras y dividirlos entre la cantidad muestras.
+paso 4) Mostrar el valor del promedio en la pantalla.
+
+Reflexion:
+1) Total sumado de los valores de las muestas y la cantidad de las muestras.
+2) No cambiaria.
+3) El proceso que se repite es el de ir guardando los resultados.
+
+
+Ejercicio 4.1
+
