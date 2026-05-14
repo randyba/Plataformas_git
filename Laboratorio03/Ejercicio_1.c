@@ -18,11 +18,11 @@ int verificar_exponente(){
     do
     {
         printf("ingrese el exponente: ");
-        scanf("%d", &exponente);
         printf("\n");
+        scanf("%d", &exponente);
         if (exponente < 0)
         {
-                printf("el exponente no puede ser negativo\n");
+            printf("el exponente no puede ser negativo\n");
         }
         else
         {
@@ -55,12 +55,34 @@ int verificar_base(){
     return base;
 }
 
+int es_par(int n){
+    if (n % 2 == 0)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
 int main(void){
 
     int exponente =verificar_exponente();
     int base = verificar_base();
     int resultado = potencia(base, exponente);
     printf("%d elevado a %d es igual a %d\n", base, exponente, resultado);
+    printf("\n");
+    int par_o_impar = es_par(resultado);
+    if (par_o_impar == 1)
+    {
+        printf("El resultado de N fue %d y es par\n", par_o_impar);
+    }
+    else
+    {
+        printf("El resultado de N fue %d y es impar\n", par_o_impar);
+    }
+
 
 
     
