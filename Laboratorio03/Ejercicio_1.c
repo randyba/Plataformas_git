@@ -6,7 +6,7 @@ int potencia(int base, int exponente){
     while (exponente>0)
     {
         resultado = resultado * base;
-        int exp = exp -1;
+        exponente = exponente -1;
     }
     return resultado;
 }
