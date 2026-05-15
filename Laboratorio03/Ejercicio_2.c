@@ -27,6 +27,7 @@ int contar_unos_columna(int m[][size], int col){
 };
 int es_identidad(int m[][size]){
     int contador_unos = 0;
+    int contador_ceros = 0;
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size; j++)
@@ -37,9 +38,15 @@ int es_identidad(int m[][size]){
                     contador_unos++;
                 }
             }
+            else{
+                if (m[i][j] != 0) // condicion para verifiacar que el resto de los elementos de la matriz sean ceros
+                {
+                    contador_ceros++;
+                }
+            }
         }
     }
-    if (contador_unos == size)
+    if (contador_unos == size && contador_ceros == 0)
     {
         return 1;
     }
@@ -48,16 +55,84 @@ int es_identidad(int m[][size]){
         return 0;
     }
 };
-//int tiene_fila_completa(int m[][size]);
-//int tiene_columna_completa(int m[][size]);
+int tiene_fila_completa(int m[][size]){
+    int contador_unos = 0;
+    int resultado = 0;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++){
+            
+            if (m[i][j] == 1)
+            {
+            contador_unos++;
+            }
+            else
+            {
+                contador_unos = 0; // si encuentra un cero en la fila, el contador de unos se reinicia
+            }
+
+        }
+        if (contador_unos == size)
+        {
+            resultado += 1; //tiene la fila completa de unos
+        }
+        
+    }
+
+
+    if (resultado >= 1)
+    {
+        return 1; //tiene la fila completa de unos
+    }
+    else
+    {
+        return 0; // no tiene la fila completa de unos
+    }
+};
+
+int tiene_columna_completa(int m[][size]){
+    int contador_unos = 0;
+    int resultado = 0;
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++){
+
+            if (m[j][i] == 1)
+            {
+                contador_unos++;
+            }
+            else
+            {
+                contador_unos = 0; // si encuentra un cero en la columna, el contador de unos se reinicia
+            }
+        }
+        if (contador_unos == size)
+        {
+            resultado += 1; //tiene la columna completa de unos
+        }
+    }
+    
+
+
+
+    if (resultado >= 1)
+    {
+        return 1; //tiene la columna completa de unos
+    }
+    else
+    {
+        return 0; // no tiene la columna completa de unos
+    }
+};
 
 int main(void){
     int fila, columna;
     int m[size][size] = {
                     {1, 0, 0, 0},
-                    {0, 1, 0, 0},
-                    {0, 0, 1, 0},
-                    {0, 0, 0, 1}};
+                    {1, 1, 0, 0},
+                    {1, 0, 1, 0},
+                    {1, 1, 1, 1}};
 
     printf("ingrese el numero de la fila para contar unos: ");
     printf("\n");
@@ -82,6 +157,29 @@ int main(void){
     else
     {
         printf("la matriz no es identidad\n");
+    }
+
+    
+   
+    int fila_completa = tiene_fila_completa(m);
+    if (fila_completa == 1)
+    {
+        printf("la mariz tiene almenos una fila completa de unos\n");
+    }
+    else
+    {
+        printf("la matriz no tiene una fila completa de unos\n");
+    }
+
+    
+    int columna_completa = tiene_columna_completa(m);
+    if (columna_completa == 1)
+    {
+        printf("la matriz tiene al menos una columna completa de unos\n");
+    }
+    else
+    {
+        printf("la matriz no tiene una columna completa de unos\n");
     }
 
     return 0;
