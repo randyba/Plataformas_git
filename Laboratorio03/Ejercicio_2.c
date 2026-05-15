@@ -208,7 +208,13 @@ int main(void){
         printf("la matriz no tiene una columna completa de unos\n");
     }
 
-    int m2[size][size];
+    int tamano;
+    printf("ingrese el tamaño de la matriz: ");
+    printf("\n");
+    scanf("%d", &tamano);
+    printf("\n");
+
+    int m2[tamano][tamano];
     generar_matriz(m2);
     printf("\n");
     printf("Matriz generada aleatoriamente:\n");
