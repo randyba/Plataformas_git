@@ -127,7 +127,7 @@ int tiene_columna_completa(int m[][size]){
 };
 
 
-int mostrar_matriz(int m[][size]){
+void mostrar_matriz(int m[][size]){
     for (int i = 0; i < size; i++)
     {
         for (int j = 0; j < size; j++)
@@ -138,9 +138,20 @@ int mostrar_matriz(int m[][size]){
     }
 };
 
+void generar_matriz(int m[][size]){
+    srand(time(NULL));
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            m[i][j] = rand() % 2; // genera un numero aleatorio entre 0 y 1
+        }
+    }
+};
+
 
 int main(void){
-    int fila, columna;
+    // int fila, columna;
     int m[size][size] = {
                     {1, 0, 0, 0},
                     {1, 1, 0, 0},
@@ -161,8 +172,8 @@ int main(void){
     // int contador_unos_columna = contar_unos_columna(m, columna);
     // printf("la cantidad de unos en la columna %d es: %d\n", columna, contador_unos_columna);
     // printf("\n");
-
-    int mostrar = mostrar_matriz(m);
+    printf("\n");
+    mostrar_matriz(m);
 
     int identidad = es_identidad(m);
     if (identidad == 1)
@@ -197,5 +208,44 @@ int main(void){
         printf("la matriz no tiene una columna completa de unos\n");
     }
 
+    int m2[size][size];
+    generar_matriz(m2);
+    printf("\n");
+    printf("Matriz generada aleatoriamente:\n");
+    mostrar_matriz(m2);
+    printf("\n");
+
+    identidad = es_identidad(m2);
+    if (identidad == 1)
+    {
+        printf("la matriz es identidad\n");
+    }
+    else
+    {
+        printf("la matriz no es identidad\n");
+    }
+
+    fila_completa = tiene_fila_completa(m2);
+    if (fila_completa == 1)
+    {
+        printf("la mariz tiene almenos una fila completa de unos\n");
+    }
+    else
+    {
+        printf("la matriz no tiene una fila completa de unos\n");
+    }
+
+    columna_completa = tiene_columna_completa(m2);
+    if (columna_completa == 1)
+    {
+        printf("la matriz tiene al menos una columna completa de unos\n");
+    }
+    else
+    {
+        printf("la matriz no tiene una columna completa de unos\n");
+    }
+
+
     return 0;
 }
+
