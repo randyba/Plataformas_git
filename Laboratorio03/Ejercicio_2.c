@@ -126,6 +126,19 @@ int tiene_columna_completa(int m[][size]){
     }
 };
 
+
+int mostrar_matriz(int m[][size]){
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = 0; j < size; j++)
+        {
+            printf("%d ", m[i][j]);
+        }
+        printf("\n");
+    }
+};
+
+
 int main(void){
     int fila, columna;
     int m[size][size] = {
@@ -134,20 +147,22 @@ int main(void){
                     {1, 0, 1, 0},
                     {1, 1, 1, 1}};
 
-    printf("ingrese el numero de la fila para contar unos: ");
-    printf("\n");
-    scanf("%d", &fila);
-    fila = fila - 1; //ajuste de numero de la fila debido a que inicia en 0
-    int contador_unos_fila = contar_unos_fila(m, fila);
-    printf("la cantidad de unos en la fila %d es: %d\n", fila, contador_unos_fila);
+    // printf("ingrese el numero de la fila para contar unos: ");
+    // printf("\n");
+    // scanf("%d", &fila);
+    // fila = fila - 1; //ajuste de numero de la fila debido a que inicia en 0
+    // int contador_unos_fila = contar_unos_fila(m, fila);
+    // printf("la cantidad de unos en la fila %d es: %d\n", fila, contador_unos_fila);
 
-    printf("ingrese el numero de la columna para contar unos: ");
-    printf("\n");
-    scanf("%d", &columna);
-    columna = columna - 1; //ajuste de numero de la columna debido a que inicia en 0
-    int contador_unos_columna = contar_unos_columna(m, columna);
-    printf("la cantidad de unos en la columna %d es: %d\n", columna, contador_unos_columna);
-    printf("\n");
+    // printf("ingrese el numero de la columna para contar unos: ");
+    // printf("\n");
+    // scanf("%d", &columna);
+    // columna = columna - 1; //ajuste de numero de la columna debido a que inicia en 0
+    // int contador_unos_columna = contar_unos_columna(m, columna);
+    // printf("la cantidad de unos en la columna %d es: %d\n", columna, contador_unos_columna);
+    // printf("\n");
+
+    int mostrar = mostrar_matriz(m);
 
     int identidad = es_identidad(m);
     if (identidad == 1)
