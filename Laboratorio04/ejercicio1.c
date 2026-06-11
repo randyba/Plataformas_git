@@ -35,6 +35,13 @@ void allocateMatrix(int ***matrix, int size) {
 
 void fillmatrix(int **matrix, int size) {
 
+    printf("Rellenando la matriz con 0s y 1s de manera aleatoria.\n");
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            *(*(matrix + i) + j) = rand() % 2; // guarda el valor aleatorio en cada entrada de la matriz.
+        }
+    }
+    return;
 }
 
 void printMatrix(int **matrix, int size) {
@@ -45,7 +52,7 @@ void printMatrix(int **matrix, int size) {
         }
         printf("\n");
     }
-
+    return;
 }
 
 void freematrix(int **matrix, int size) {
