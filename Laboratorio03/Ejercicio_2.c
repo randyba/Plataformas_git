@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define size 4
+#define size 6
 
 int contar_unos_fila(int m[][size], int fila){
     int contador = 0;
@@ -208,13 +208,13 @@ int main(void){
         printf("la matriz no tiene una columna completa de unos\n");
     }
 
-    int tamano;
-    printf("ingrese el tamaño de la matriz: ");
-    printf("\n");
-    scanf("%d", &tamano);
-    printf("\n");
+    // int tamano;
+    // printf("ingrese el tamano de la matriz: ");
+    // printf("\n");
+    // scanf("%d", &tamano);
+    // printf("\n");
 
-    int m2[tamano][tamano];
+    int m2[size][size];
     generar_matriz(m2);
     printf("\n");
     printf("Matriz generada aleatoriamente:\n");
