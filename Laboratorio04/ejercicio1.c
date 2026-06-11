@@ -2,6 +2,25 @@
 #include <stdlib.h>
 
 void FindLargestLine(int **matrix, int size, int *result) {
+    int maxLine = 0;// este sera un contadorsillo que lleva el dato de unos mas largo
+    for (int i = 0; i < size; i++) {
+        int lineaactual = 0; //seteamos el contador de la linea actual a 0
+        for (int j = 0; j < size; j++) {
+            if (*(*(matrix + i) + j) == 1) { // en el if, vemos entrada por entrada si hay un uno
+                lineaactual++;// si se cumple, entonces sumamos uno al contador
+            } else {
+                if (lineaactual > maxLine) { // peguuntamos si el conador es mayor al maximo para actualizar
+                    maxLine = lineaactual; // defiino el nuevo valor que tendra el maximo en ese pinto
+                }
+                lineaactual = 0;// aqui seteo el contador para la siguiente linea.
+            }
+        }
+        if (lineaactual > maxLine) {// pregnuro si el contador es mayor al maximo, para actualizar
+            maxLine = lineaactual;
+        }
+    }
+*result = maxLine; // pasamos el dato de la linea por debajo, por  el puntero *result
+return;
 
 }
 
@@ -35,7 +54,14 @@ int main(void) {
     int size, largestLine;
     int **matrix= NULL;
 
+    printf("Ingrese el tamano de la matriz: ");
+    scanf("%d", &size);
 
+    allocateMatrix(&matrix, size);
+    fillmatrix(matrix, size);
+    FindLargestLine(matrix, size, &largestLine);
+    printMatrix(matrix, size);
+    freematrix(matrix, size);
 
     printf("El tamano de la secuencia de 1s mas grande es: %d\n", largestLine);
     return 0;
