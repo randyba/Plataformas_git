@@ -25,6 +25,11 @@ return;
 }
 
 void allocateMatrix(int ***matrix, int size) {
+    *matrix = (int **)malloc(size * sizeof(int *));// se asigna o reserva la memoria para las entradas. esta parte es un poco compleja para mi.
+    for (int i = 0; i < size; i++) {
+        *(*matrix + i) = (int *)malloc(size * sizeof(int));// se reserva la memoria para cada fila, se ven como listas.
+    }
+    return;
 
 }
 
