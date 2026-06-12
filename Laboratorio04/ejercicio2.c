@@ -4,7 +4,7 @@
 
 
 unsigned char *read_pgm (const char *filename, int *width, int *height, int *max_val){
-
+    
 }
 
 void apply_threshold(unsigned char *pixels, int total, int threshold) {
@@ -24,6 +24,15 @@ void apply_threshold(unsigned char *pixels, int total, int threshold) {
 }
 
 unsigned char *make_negative(unsigned char *pixels, int total) {
+    unsigned char *actual = pixels; // este puntero va a los pixeles
+    unsigned char *fin = pixels + total; // va al final
+
+    while (actual < fin) { // preguntamos si es logico que no estemos en el final
+        *actual = 255 - *actual; //como se invierte, entonces se resta el valor a 255
+        actual++;
+    }
+
+    return pixels;
 
 }
 
