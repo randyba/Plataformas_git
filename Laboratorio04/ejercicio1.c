@@ -2,13 +2,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-void findLargestLine(int **matrix, int size, int *result) {
+void FindLargestLine(int **matrix, int size, int *result) {
     int maxLine = 0; // este sera un contadorsillo que lleva el dato de unos mas largo
     int lineaActual = 0; // contador de la secuencia actual de 1s
-    int size2 = size * size;
+    int total = size * size;
     int *linear = *(matrix + 0); // puntero al primer elemento de la matriz
 
-    for (int i = 0; i < size2; i++) {
+    for (int i = 0; i < total; i++) {
         if (*(linear + i) == 1) {
             lineaActual++;
         } else {
@@ -71,7 +71,7 @@ int main(void) {
 
     allocateMatrix(&matrix, size);
     fillmatrix(matrix, size);
-    findLargestLine(matrix, size, &largestLine);
+    FindLargestLine(matrix, size, &largestLine);
     printMatrix(matrix, size);
     freematrix(matrix, size);
 
